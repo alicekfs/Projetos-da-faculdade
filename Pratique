@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Eventos {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir nome e endereço do usuário
+        System.out.println("Digite seu nome: ");
+        String nome = scanner.nextLine();
+
+        System.out.println("Digite seu endereço: ");
+        String endereco = scanner.nextLine();
+
+        // Exibir horários e eventos
+        System.out.println("\n**Eventos disponíveis:**");
+        System.out.println("1. Halloween (11:00 - 13:00)");
+        System.out.println("2. Festa da igreja (14:00 - 16:00)");
+        System.out.println("3. Evento de Cosplay (16:00 - 18:00)");
+        System.out.println("4. Kpop (11:00 - 18:00)");
+
+        // Ler a escolha do usuário
+        System.out.println("\nDigite o número do evento que deseja participar: ");
+        int escolha = scanner.nextInt();
+
+        // Obter o nome do evento escolhido
+        String evento = "";
+        switch (escolha) {
+            case 1:
+                evento = "Halloween";
+                break;
+            case 2:
+                evento = "Festa da igreja";
+                break;
+            case 3:
+                evento = "Evento de Cosplay";
+                break;
+            case 4:
+                evento = "Kpop";
+                break;
+        }
+
+        // Confirmar a inscrição
+        System.out.println("\nVocê deseja se inscrever no evento " + evento + "? (S/N)");
+        String confirmacao = scanner.next();
+
+        // Exibir mensagem de confirmação ou cancelamento
+        if (confirmacao.equalsIgnoreCase("S")) {
+            System.out.println("\nSua inscrição no evento " + evento + " foi confirmada!");
+        } else {
+            System.out.println("\nSua inscrição foi cancelada.");
+        }
+
+        // Opção para cancelar a inscrição
+        System.out.println("\nDeseja cancelar sua inscrição? (S/N)");
+        String cancelar = scanner.next();
+
+        if (cancelar.equalsIgnoreCase("S")) {
+            System.out.println("\nSua inscrição no evento " + evento + " foi cancelada.");
+        } else {
+            System.out.println("\nSua inscrição no evento " + evento + " está confirmada!");
+        }
+    }
+}
